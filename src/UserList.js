@@ -1,31 +1,31 @@
-import  Movie  from './Movie.js';
+import  User  from './User.js';
 import DeleteIcon from '@mui/icons-material/Delete';
 import IconButton from '@mui/material/IconButton';
 import EditIcon from '@mui/icons-material/Edit'
 import { useHistory } from 'react-router-dom';
 
 
-export default function MovieList({Movies, setMovies}){
+export default function UserList({Users, setUsers}){
   const history = useHistory();
     return(
-      <section className="movieList">
-         {Movies.map(({name,rating,summary, poster, trailer}, index) => 
-          <Movie 
+      <section className="userList">
+         {Users.map(({name,userName, batch, avatar}, index) => 
+          <User 
             name={name} 
-            rating={rating} 
-            summary={summary} 
-            poster={poster}
-            trailer={trailer}
+            userName={userName} 
+            batch={batch} 
+            avatar={avatar}
+            
             id={index}
             deleteButton={
               <IconButton 
                 onClick={() =>{
                   const deleteIdx = index;
-                  const remainingMovies = Movies.filter((mv, idx) => idx !== deleteIdx) 
-                  console.log("remaining", remainingMovies)
-                  setMovies(remainingMovies)
+                  const remainingUsers = Users.filter((mv, idx) => idx !== deleteIdx) 
+                  console.log("remaining", remainingUsers)
+                  setUsers(remainingUsers)
                 }} 
-                  className="movie-show-button"
+                  className="user-show-button"
                   aria-label="delete" 
                   color="error">
                     <DeleteIcon />
@@ -33,11 +33,11 @@ export default function MovieList({Movies, setMovies}){
             }
             editButton={
               <IconButton 
-                onClick={() =>{ history.push("/movies/edit/" + index)
+                onClick={() =>{ history.push("/users/edit/" + index)
                  
                 }} 
                 style={{ marginLeft:"auto" }}
-                className="movie-show-button"
+                className="user-show-button"
                   aria-label="delete" 
                   color="primary">
                     <EditIcon />

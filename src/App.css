@@ -6,14 +6,18 @@
 
 .user-name{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
 }
 
-.profile-pic{
+/* .profile-pic{
   border-radius: 150px;
-  height: 100px;
+  height: 200px;
   width: 100px;
-}
-.movie-container{
+} */
+.user-container{
   background-color: white;
   min-width: 320px;
   width: 350px;
@@ -26,48 +30,52 @@
 -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.81);
 -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.81);
 }
-.add-movie-form{
+.add-user-form{
   display: flex;
   flex-direction: column;
   
   margin: 30px;
 }
-.add-movie-input{
+.add-user-input{
   margin: 20px;
 }
 
 
-.movie-poster{
-  height: 300px;
+.user-poster{
+  height: 250px;
   width: 350px;
   object-fit: cover;
 }
 
-.movie-specs{
+.user-specs{
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
-.movie-rating{
+.user-rating{
   font-size: 18px;
   margin-right: 5px;
 }
 
-.movie-name{
+/* li{
+  display: flex;
+} */
+
+.user-name{
   font-size: 24px;
   margin: 5px;
   max-width: 80%;
 }
 
-.movie-summary{
+.user-summary{
   margin-top: 0px;
   margin: 10px;
 }
 
 
 
-.movieList{
+.userList{
   display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -87,16 +95,17 @@
   background-color: brown;
 }
 
-.movie-container:hover{
+.user-container:hover{
   transition: all 0.5s;
   transform: scale(1.05);
+  cursor: pointer;
 }
 
-.movie-show-button{
+.user-show-button{
 font-size: 15px;
 }
 
-.add-movie{
+.add-user{
   display: flex;
   flex-direction: column;
   width: 75%;

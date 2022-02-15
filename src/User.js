@@ -10,25 +10,25 @@ import { useHistory } from "react-router-dom";
 
 
 
-export default function Movie({name, rating, summary, poster,trailer, id, deleteButton, editButton}){
+export default function User({name,userName,batch, avatar, id, deleteButton, editButton}){
     const [show, setShow] = useState(false);
-const styles = rating > 8 ? {color : 'teal', fontWeight: 'bold'} : {color : 'crimson', fontWeight: 'bold'};
-const history = useHistory();
 
-const summarystyles = { display :show ? 'block' : 'none'} 
+    const history = useHistory();
+
+    const summarystyles = { display :show ? 'block' : 'none'} 
     return (
       
-      <div className="movie-container">
+      <div className="user-container">
         <img 
-          src={poster} 
+          src={avatar} 
           alt={name} 
-          className="movie-poster"/>
-        <div className="movie-specs">
-              <h3 className="movie-name">{name}
+          className="user-poster"/>
+        <div className="user-specs">
+              <h3 className="user-name">{name}
 
               <IconButton 
                 onClick={() =>{
-                  history.push("/movies/" + id);
+                  history.push("/users/" + id);
                 }} 
                 
                   aria-label="delete" 
@@ -38,7 +38,7 @@ const summarystyles = { display :show ? 'block' : 'none'}
 
               <IconButton 
                   onClick ={() => setShow(!show)} 
-                  className="movie-show-button" 
+                  className="user-show-button" 
                   aria-label="delete" 
                   color="primary">
                     {show ? <ExpandLessIcon /> : <ExpandMoreIcon /> }
@@ -46,14 +46,16 @@ const summarystyles = { display :show ? 'block' : 'none'}
                 
               </h3>
 
-              <p className="movie-rating" style={styles}>⭐{rating} </p>
+              
               </div>
 
        
         
-        {/* <p   style={summarystyles} className="movie-summary">{summary}</p>   */}
+        {/* <p   style={summarystyles} className="user-summary">{summary}</p>   */}
 
-        {show ? <p   style={summarystyles} className="movie-summary">{summary}</p> : ""}
+        {show ?<div>
+        <h4   style={summarystyles} className="user-batch"> {userName}</h4> 
+        <p   style={summarystyles} className="user-batch"> {batch}</p></div> : ""}
         <Counter /> {editButton} {deleteButton}
         
   
