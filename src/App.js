@@ -10,6 +10,8 @@ import { UserDetails } from './UserDetails';
 import { EditUser } from './EditUser';
 
 
+
+
 export default function App() {
   const List_of_Users=[
     {
@@ -140,9 +142,9 @@ export default function App() {
   return (
     <div className="App">
       <nav>
-        <Link to="/home">Home</Link>
-        <Link to="/users">Users</Link>
-        <Link to="/create-user">Add Users</Link>
+        <Link to="/home" style={{textDecoration:"none"}}>Home</Link>
+        <Link to="/users" style={{textDecoration:"none"}}>Users</Link>
+        <Link to="/create-user" style={{textDecoration:"none"}}>Add Users</Link>
         
       </nav>
       <Switch>
